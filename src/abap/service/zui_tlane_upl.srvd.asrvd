@@ -1,0 +1,5 @@
+@EndUserText.label: 'T-Lane Upload Service Definition'
+define service ZUI_TLANE_UPL {
+  expose ZC_TLANE_UPL_H as UploadHeader;
+  expose ZC_TLANE_UPL_I as UploadItem;
+}

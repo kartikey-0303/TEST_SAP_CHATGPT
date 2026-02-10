@@ -1,0 +1,19 @@
+@Metadata.layer: #CORE
+annotate view ZC_TLANE_UPL_I with {
+  @UI.lineItem: [
+    { position: 10, value: item_no },
+    { position: 20, value: matnr },
+    { position: 30, value: locno_from },
+    { position: 40, value: locno_to },
+    { position: 50, value: mot },
+    { position: 60, value: priority },
+    { position: 70, value: process_status },
+    { position: 80, value: message_severity },
+    { position: 90, value: message_text }
+  ]
+
+  @UI.identification: [ { position: 10, value: item_no } ] item_no;
+  @UI.identification: [ { position: 20, value: matnr } ] matnr;
+  @UI.identification: [ { position: 30, value: locno_from } ] locno_from;
+  @UI.identification: [ { position: 40, value: locno_to } ] locno_to;
+};

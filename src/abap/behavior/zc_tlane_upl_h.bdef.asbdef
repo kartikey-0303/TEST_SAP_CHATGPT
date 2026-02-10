@@ -1,0 +1,12 @@
+define behavior for ZC_TLANE_UPL_H alias Header
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Validate;
+  use action Process;
+
+  use association _Items { create; }
+}

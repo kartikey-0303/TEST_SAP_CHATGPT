@@ -1,0 +1,6 @@
+@EndUserText.label: 'T-Lane Upload OData V4 Binding'
+define service binding ZUI_TLANE_UPL_O4
+  type #ODATA_V4
+{
+  expose ZUI_TLANE_UPL as TlaneUploadService;
+}
