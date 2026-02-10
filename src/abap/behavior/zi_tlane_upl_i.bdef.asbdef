@@ -1,0 +1,19 @@
+define behavior for ZI_TLANE_UPL_I alias Item
+persistent table zt_tlane_upl_i
+lock dependent by _Header
+authorization dependent by _Header
+etag master <none>
+{
+  update;
+  delete;
+
+  field ( readonly ) upload_uuid, item_no, target_lane_exists, process_status, message_text, message_severity;
+  field ( readonly : update ) creation_mode, order_unit where target_lane_exists = abap_true;
+
+  validation validate_item on save { field matnr, locno_from, locno_to, mot, available_from, available_to, priority, min_lot_size, rounding_value; }
+  determination determine_defaults on save { field creation_mode, order_unit, trans_calendar, planned_deliv_time, ship_calendar, rec_calendar, cust_attr7; }
+
+  action processUpload result [1] $self;
+
+  association _Header;
+}

@@ -1,0 +1,17 @@
+define behavior for ZI_TLANE_UPL_H alias Header
+persistent table zt_tlane_upl_h
+lock master
+authorization master ( instance )
+etag master <none>
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly ) upload_uuid, uploaded_by, uploaded_at, success_records, error_records, total_records;
+
+  association _Items { create; }
+
+  action ( features : instance ) Validate result [1] $self;
+  action ( features : instance ) Process result [1] $self;
+}

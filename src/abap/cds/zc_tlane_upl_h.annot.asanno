@@ -1,0 +1,26 @@
+@Metadata.layer: #CORE
+annotate view ZC_TLANE_UPL_H with {
+  @UI.headerInfo: {
+    typeName: 'Upload Batch',
+    typeNamePlural: 'Upload Batches',
+    title: { value: source_file_name }
+  }
+
+  @UI.facet: [
+    { id: 'General', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'General' },
+    { id: 'Items', purpose: #STANDARD, type: #LINEITEM_REFERENCE, targetElement: '_Items', label: 'Items' }
+  ]
+
+  @UI.lineItem: [
+    { position: 10, value: source_file_name },
+    { position: 20, value: uploaded_by },
+    { position: 30, value: uploaded_at },
+    { position: 40, value: process_status },
+    { position: 50, value: total_records },
+    { position: 60, value: success_records },
+    { position: 70, value: error_records }
+  ]
+
+  @UI.selectionField: [ { position: 10 } ] source_file_name;
+  @UI.selectionField: [ { position: 20 } ] process_status;
+};
